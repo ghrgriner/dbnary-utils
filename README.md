@@ -6,7 +6,7 @@ The motivation is that statistics on translations in the English-language
 Wiktionary have only been sporadically provided on the Wiktionary website
 over the last 10 years. However, during that time, preprocessed datasets
 and aggregated counts have been available through the DBnary project either
-immediately as bar graphs in the online dashboard or via SPARQL queries.
+immediately as bar graphs in [the online dashboard](https://kaiko.getalp.org/about-dbnary/dashboard/) or via [SPARQL queries](https://kaiko.getalp.org/about-dbnary/online-access/).
 
 In this repository we provide some example queries for obtaining translation
 counts and give comments on these queries and existing counts.
