@@ -1,0 +1,52 @@
+# Based on kaiko/queries/latest_translation_stats.sparql in the 'original'
+# DBnary code. We have removed the code from the original query that selects
+# just the latest version. We think this gives the counts presented in the
+# 'Number of Translations' figures on the 'General' tab and the tabs for
+# the language-specific Wiktionaries.
+#-----------------------------------------------------------------------------
+# Remark 1: it looks like the 'mul' column is a total and therefore we think
+# it should be replaced in the displayed stacked bar graphs with 'others' 
+# Remark 2: currently (14Sep2026) when the query is run, summing the
+#  language-specific counts + `others` <= `totalCount`. For versions before
+#  20200701, this sum always equals `totalCount`.
+# Remark 3: The structure of the data suggests that the language counts
+#  displayed in the dashboard are the only ones for which the counts have
+#  been pre-calculated and stored.
+#-----------------------------------------------------------------------------
+SELECT ?Version ?Language
+        (sample(?deuCount) as ?deu)
+        (sample(?ellCount) as ?ell)
+        (sample(?engCount) as ?eng)
+        (sample(?finCount) as ?fin)
+        (sample(?fraCount) as ?fra)
+        (sample(?itaCount) as ?ita)
+        (sample(?jpnCount) as ?jpn)
+        (sample(?porCount) as ?por)
+        (sample(?rusCount) as ?rus)
+        (sample(?turCount) as ?tur)
+        (sample(?othersCount) as ?others)
+        (sample(?totalCount) as ?total)
+        (sample(?langCount) as ?number_of_languages)
+WHERE {
+    ?obs
+        qb:dataSet dbnstats:dbnaryTranslationsCube ;
+        dbnary:observationLanguage ?Language ;
+        dbnary:wiktionaryDumpVersion ?Version .
+
+        { ?obs dbnary:nymRelation dbnary:synonym ; dbnary:count ?synCount. }
+        UNION { ?obs lime:language "de" ; dbnary:count ?deuCount . }
+        UNION { ?obs lime:language "el" ; dbnary:count ?ellCount . }
+        UNION { ?obs lime:language "en" ; dbnary:count ?engCount . }
+        UNION { ?obs lime:language "fi" ; dbnary:count ?finCount . }
+        UNION { ?obs lime:language "fr" ; dbnary:count ?fraCount . }
+        UNION { ?obs lime:language "it" ; dbnary:count ?itaCount . }
+        UNION { ?obs lime:language "ja" ; dbnary:count ?jpnCount . }
+        UNION { ?obs lime:language "pt" ; dbnary:count ?porCount . }
+        UNION { ?obs lime:language "ru" ; dbnary:count ?rusCount . }
+        UNION { ?obs lime:language "tr" ; dbnary:count ?turCount . }
+        UNION { ?obs lime:language "others" ; dbnary:count ?othersCount . }
+        UNION { ?obs lime:language "mul" ; dbnary:count ?totalCount . }
+        UNION { ?obs lime:language "number_of_languages" ; dbnary:count ?langCount . }
+
+} GROUP by ?Version ?Language
+ORDER BY ?Version ?Language 

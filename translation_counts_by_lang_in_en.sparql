@@ -1,0 +1,44 @@
+# Get translation counts from English-language Wiktionary for all target
+# languages or selected languages.
+# See the 'Getting all translations to Wolof' example at
+# https://kaiko.getalp.org/about-dbnary/online-access/ for an example where
+# the source word and translation is provided in the output instead of counts.
+#-----------------------------------------------------------------------------
+# Remark 1: the `tl` column is not very useful for presentation, as it is the
+# language code in lexvo format (i.e., 'http://lexvo.org/id/iso639-3/xyz',
+# where 'xyz' is a three-letter language code). We're not sure what the best
+# way is to convert this automatically to a/the language name.
+#-----------------------------------------------------------------------------
+SELECT ?tl (count(?t) as ?tCount)
+WHERE { 
+  ?t dbnary:targetLanguage ?tl ;
+     dbnary:isTranslationOf ?e.
+  ?e lime:language "en".
+}
+
+# Add VALUES line to select only a subset of languages. We guess that
+# the 3 letters after 'lexvo:' should be the ISO 639-3 code (if it exists).
+# See https://iso639-3.sil.org/code_tables/639/data for finding ISO 639-3
+# code values by language name.
+SELECT ?tl (count(?t) as ?tCount)
+WHERE { 
+  VALUES ?tl { lexvo:deu lexvo:fra lexvo:cmn}
+  ?t dbnary:targetLanguage ?tl ;
+     dbnary:isTranslationOf ?e.
+  ?e lime:language "en".
+}
+
+# If specific languages are selected using VALUES, the label can also be set
+# in the VALUES statement
+SELECT ?tl ?tlLabel (count(?t) as ?tCount)
+WHERE { 
+  VALUES (?tl ?tlLabel) {
+     (lexvo:deu "German")
+     (lexvo:fra "French")
+     (lexvo:cmn "Mandarin Chinese")
+  }
+  ?t dbnary:targetLanguage ?tl ;
+     dbnary:isTranslationOf ?e.
+  ?e lime:language "en".
+}
+

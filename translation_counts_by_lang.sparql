@@ -1,0 +1,8 @@
+# Get translation counts from all Wiktionaries for all target
+# languages. See remarks in `translation_counts_by_lang_in_en.sparql`.
+SELECT ?l ?tl (count(?t) as ?tCount)
+WHERE { 
+  ?t dbnary:targetLanguage ?tl ;
+     dbnary:isTranslationOf ?e.
+  ?e lime:language ?l.
+}
