@@ -25,15 +25,15 @@ individual Wiktionaries (which present the data by extraction date).
 
 2. [translation\_counts\_by\_lang\_in\_en.sparql](translation\_counts\_by\_lang\_in\_en.sparql): This contains three example queries:
 
-a. translation counts for all target languages from the current English-language 
+  a. translation counts for all target languages from the current English-language
 Wiktionary
 
-b. translation counts for selected languages from the same Wiktionary
+  b. translation counts for selected languages from the same Wiktionary
 
-c. translation counts for selected languages with output labels manually assigned
+  c. translation counts for selected languages with output labels manually assigned
    from the same Wiktionary
 
-3. [translation\_counts\_by\_lang.sparql](translation\_counts\_by\_lang.sparql): 
+3. [translation\_counts\_by\_lang.sparql](translation\_counts\_by\_lang.sparql):
 This is the same as 2a. above, but presented by Wiktionary and target language
 instead of being limited to the English language Wiktionary.
 
@@ -42,9 +42,8 @@ instead of being limited to the English language Wiktionary.
 The repository [wiki](https://github.com/ghrgriner/dbnary-utils/wiki)
 may have further discussion.
 
-# References 
+# References
 
 [1] Sérasset G (2014), “DBnary: Wiktionary as a Lemon-Based Multilingual Lexical Resource in RDF”, in _Semantic Web_, volume 0, number 1. http://www.semantic-web-journal.net/system/files/swj648.pdf
 
 [2] DBnary (2026). DBnary - Wiktionary as Linguistic Linked Open Data. https://kaiko.getalp.org/about-dbnary/. Retrieved September 14, 2026.
-
