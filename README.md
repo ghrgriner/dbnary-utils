@@ -24,11 +24,10 @@ the General tab (which presents the data by Wiktionary) and on the tabs for the
 individual Wiktionaries (which present the data by extraction date).
 
 2. [translation\_counts\_by\_lang\_in\_en.sparql](translation\_counts\_by\_lang\_in\_en.sparql): This contains three example queries:
-  a. translation counts for all target languages from the current English-language
+   a. translation counts for all target languages from the current English-language
 Wiktionary
-  b. translation counts for selected languages from the same Wiktionary
-  c. translation counts for selected languages with output labels manually assigned
-   from the same Wiktionary
+   b. translation counts for selected languages from the same Wiktionary
+   c. translation counts for selected languages with output labels manually assigned from the same Wiktionary
 
 3. [translation\_counts\_by\_lang.sparql](translation\_counts\_by\_lang.sparql):
 This is the same as 2a. above, but presented by Wiktionary and target language
