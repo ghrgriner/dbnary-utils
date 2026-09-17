@@ -18,7 +18,8 @@ details for DBnary and for this repository.
 
 # Files with Example Queries
 
-There are some remarks provided as comments in the files.
+There are some remarks provided as comments in the files. There are some
+other example queries embedded in wiki pages (see link to wiki below).
 
 1. [translation\_stats\_by\_sel\_lang\_and\_ver.sparql](translation\_stats\_by\_sel\_lang\_and\_ver.sparql):
 we think this gives the translation counts for selected languages presented on
