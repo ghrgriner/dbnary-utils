@@ -11,10 +11,18 @@ immediately as bar graphs in
 or via [SPARQL queries](https://kaiko.getalp.org/about-dbnary/online-access/).
 
 In this repository we provide some example queries for obtaining translation
-counts and give comments on these queries and existing counts.
+counts and give comments on these queries, other existing counts, and
+the database structure.
+
+Because [Wikidata](https://en.wikipedia.org/wiki/Wikidata) is another
+database that stores lexicographical data in a similar structure, we
+include in this repository a brief comparison of Wikidata and DBnary / Wiktionary,
+including a comparison of item counts.
 
 See [LICENSE.txt](LICENSE.txt) for complete license and attribution
 details for DBnary and for this repository.
+
+We are not affiliated with the DBnary project or authors.
 
 # Files with Example Queries
 
