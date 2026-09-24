@@ -16,8 +16,8 @@ WHERE {
   ?e lime:language "en".
 }
 
-# Add VALUES line to select only a subset of languages. We guess that
-# the 3 letters after 'lexvo:' should be the ISO 639-3 code (if it exists).
+# Add VALUES line to select only a subset of languages. The 3 letters after
+# 'lexvo:' should be the ISO 639-3 code (if it exists).
 # See https://iso639-3.sil.org/code_tables/639/data for finding ISO 639-3
 # code values by language name.
 SELECT ?tl (count(?t) as ?tCount)

@@ -16,8 +16,8 @@ the database structure.
 
 Because [Wikidata](https://en.wikipedia.org/wiki/Wikidata) is another
 database that stores lexicographical data in a similar structure, we
-include in this repository a brief comparison of Wikidata and DBnary / Wiktionary,
-including a comparison of item counts.
+include in this repository a brief comparison of Wikidata and
+DBnary / Wiktionary, including a comparison of item counts.
 
 See [LICENSE.txt](LICENSE.txt) for complete license and attribution
 details for DBnary and for this repository.
@@ -50,6 +50,7 @@ instead of being limited to the English-language Wiktionary.
 # Wiki
 
 The repository [wiki](https://github.com/ghrgriner/dbnary-utils/wiki) has some further discussion.
+The wiki home page linked above has the recommended reading order.
 
 # References
 

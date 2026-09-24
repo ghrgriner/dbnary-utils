@@ -8,10 +8,7 @@
 # it should be replaced in the displayed stacked bar graphs with 'others' 
 # Remark 2: currently (14Sep2026) when the query is run, summing the
 #  language-specific counts + `others` <= `totalCount`. For versions before
-#  20200701, this sum always equals `totalCount`.
-# Remark 3: The structure of the data suggests that the language counts
-#  displayed in the dashboard are the only ones for which the counts have
-#  been pre-calculated and stored.
+#  20200701, this sum always equals `totalCount`. See discussion on wiki.
 #-----------------------------------------------------------------------------
 SELECT ?Version ?Language
         (sample(?deuCount) as ?deu)
